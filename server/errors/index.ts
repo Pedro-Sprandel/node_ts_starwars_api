@@ -10,7 +10,7 @@ class CustomError extends Error {
 
 export class DuplicateUserError extends CustomError {
   constructor() {
-    super("Username or email already exists", 409)
+    super("Username or email already exists", 409);
   }
 }
 

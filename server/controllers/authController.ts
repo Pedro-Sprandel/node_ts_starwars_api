@@ -28,7 +28,7 @@ export const loginController = async (req: Request, res: Response, next: NextFun
 
     const user = await getUserWithPasswordByEmail(email);
 
-    if(!user || !(await comparePassword(password, user.password_hash))) {
+    if(!user || !(await comparePassword(password, user.password))) {
       return next(createHttpError(401, "Invalid credentials"));
     }
 

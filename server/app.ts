@@ -1,11 +1,12 @@
+import dotenv from "dotenv";
+import { getEnvFile } from "./utils/env.ts";
+dotenv.config({ path: getEnvFile() });
 import express from "express";
 import routes from "./routes/index.ts";
-import { handleError, handleNotFound } from "./controllers/appController.ts";
-import pool from "./src/db.ts";
 import cookieParser from "cookie-parser";
+import { handleError, handleNotFound } from "./controllers/appController.ts";
 
 const app = express();
-pool.connect();
 
 app.use(express.static("public"));
 app.use(express.json());

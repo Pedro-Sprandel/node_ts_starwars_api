@@ -4,8 +4,8 @@
   "main": "index.js",
   "type": "module",
   "scripts": {
-    "dev": "DEBUG=node_expr:* nodemon --watch './**/*.ts' --exec 'node --loader ts-node/esm' --no-warnings ./server/bin/www.ts",
-    "test": "jest server/**/*.test.ts"
+    "dev": "NODE_ENV=development DEBUG=node_expr:* nodemon --watch './**/*.ts' --exec 'node --loader ts-node/esm' --no-warnings ./server/bin/www.ts",
+    "test": "NODE_ENV=jest jest server/**/*.test.ts"
   },
   "keywords": [],
   "author": "",
