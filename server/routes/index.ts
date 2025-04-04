@@ -1,10 +1,11 @@
-import { Router, Request, Response } from "express";
+import type { Request, Response } from "express";
+import { Router } from "express";
 import authRoutes from "./auth.ts";
 
 const routes = Router();
 
 routes.get("/", (req: Request, res: Response) => {
-  res.send("AAAA");
+  res.send("Teste");
 });
 
 routes.use("/auth", authRoutes);

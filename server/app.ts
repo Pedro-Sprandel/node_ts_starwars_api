@@ -1,7 +1,8 @@
 import express from "express";
 import routes from "./routes/index.ts";
-import { handleError, handleNotFound } from "./controllers/app.ts";
+import { handleError, handleNotFound } from "./controllers/appController.ts";
 import pool from "./src/db.ts";
+import cookieParser from "cookie-parser";
 
 const app = express();
 pool.connect();
@@ -9,6 +10,8 @@ pool.connect();
 app.use(express.static("public"));
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
+
+app.use(cookieParser());
 
 app.use("/api", routes);
 app.use(handleNotFound);
